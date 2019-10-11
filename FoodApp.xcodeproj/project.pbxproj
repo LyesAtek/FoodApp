@@ -15,6 +15,14 @@
 		668BA8622350B8BB00BEA939 /* FoodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8612350B8BB00BEA939 /* FoodAppTests.swift */; };
 		668BA8732350BA3E00BEA939 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668BA8722350BA3E00BEA939 /* MainViewController.xib */; };
 		668BA8752350BA6200BEA939 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8742350BA6200BEA939 /* MainViewController.swift */; };
+		668BA8772350C42700BEA939 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8762350C42700BEA939 /* Product.swift */; };
+		668BA8792350C43100BEA939 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8782350C43100BEA939 /* Order.swift */; };
+		668BA87B2350C45500BEA939 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA87A2350C45500BEA939 /* Category.swift */; };
+		668BA87E2350C5B100BEA939 /* ParseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA87D2350C5B100BEA939 /* ParseDate.swift */; };
+		668BA8822350C8B400BEA939 /* WBCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8812350C8B400BEA939 /* WBCategory.swift */; };
+		668BA8842350C8D500BEA939 /* FoodServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8832350C8D500BEA939 /* FoodServer.swift */; };
+		668BA8862350CF5D00BEA939 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8852350CF5D00BEA939 /* CategoryViewModel.swift */; };
+		668BA8882350D04100BEA939 /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8872350D04100BEA939 /* ParseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,14 @@
 		668BA8632350B8BB00BEA939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668BA8722350BA3E00BEA939 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		668BA8742350BA6200BEA939 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		668BA8762350C42700BEA939 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		668BA8782350C43100BEA939 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		668BA87A2350C45500BEA939 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		668BA87D2350C5B100BEA939 /* ParseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDate.swift; sourceTree = "<group>"; };
+		668BA8812350C8B400BEA939 /* WBCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCategory.swift; sourceTree = "<group>"; };
+		668BA8832350C8D500BEA939 /* FoodServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodServer.swift; sourceTree = "<group>"; };
+		668BA8852350CF5D00BEA939 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		668BA8872350D04100BEA939 /* ParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,7 @@
 		668BA8482350B8B900BEA939 /* FoodApp */ = {
 			isa = PBXGroup;
 			children = (
+				668BA87C2350C59700BEA939 /* Utils */,
 				668BA86F2350B9E300BEA939 /* WebService */,
 				668BA86E2350B9D800BEA939 /* Model */,
 				668BA86D2350B9D100BEA939 /* ViewsModel */,
@@ -116,6 +133,7 @@
 		668BA86D2350B9D100BEA939 /* ViewsModel */ = {
 			isa = PBXGroup;
 			children = (
+				668BA8852350CF5D00BEA939 /* CategoryViewModel.swift */,
 			);
 			path = ViewsModel;
 			sourceTree = "<group>";
@@ -123,6 +141,9 @@
 		668BA86E2350B9D800BEA939 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				668BA8762350C42700BEA939 /* Product.swift */,
+				668BA8782350C43100BEA939 /* Order.swift */,
+				668BA87A2350C45500BEA939 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +151,7 @@
 		668BA86F2350B9E300BEA939 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				668BA8812350C8B400BEA939 /* WBCategory.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -148,6 +170,16 @@
 				668BA8742350BA6200BEA939 /* MainViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		668BA87C2350C59700BEA939 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				668BA87D2350C5B100BEA939 /* ParseDate.swift */,
+				668BA8832350C8D500BEA939 /* FoodServer.swift */,
+				668BA8872350D04100BEA939 /* ParseData.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668BA8792350C43100BEA939 /* Order.swift in Sources */,
 				668BA84C2350B8B900BEA939 /* ViewController.swift in Sources */,
+				668BA8822350C8B400BEA939 /* WBCategory.swift in Sources */,
+				668BA8882350D04100BEA939 /* ParseData.swift in Sources */,
+				668BA8862350CF5D00BEA939 /* CategoryViewModel.swift in Sources */,
 				668BA84A2350B8B900BEA939 /* AppDelegate.swift in Sources */,
+				668BA87E2350C5B100BEA939 /* ParseDate.swift in Sources */,
+				668BA8772350C42700BEA939 /* Product.swift in Sources */,
 				668BA8522350B8B900BEA939 /* FoodApp.xcdatamodeld in Sources */,
 				668BA8752350BA6200BEA939 /* MainViewController.swift in Sources */,
+				668BA8842350C8D500BEA939 /* FoodServer.swift in Sources */,
+				668BA87B2350C45500BEA939 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
