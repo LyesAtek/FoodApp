@@ -13,11 +13,13 @@ class Category{
     var  _id : String
     var tittle : String
     var  creation : String
+    var image : String
     
-    init(id : String,tittle: String, creation: String){
+    init(id : String,tittle: String, creation: String, image: String){
         self._id = id
         self.tittle = tittle
         self.creation = creation
+        self.image = image
     }
     
 }

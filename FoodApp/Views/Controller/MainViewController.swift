@@ -9,18 +9,76 @@
 import UIKit
 
 class MainViewController : UIViewController{
-    var categoryViewModel = CategoryViewModel()
+    
+    let waitingTaskFinishes = DispatchGroup()
+    
+    var categoriesViewModel : [CategoryViewModel] = []
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    let cellReuseIdentifier : String = "CategoryCell"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Initialize CollectionView
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+    //    collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+         //Call Methode services to get Categories
+        self.waitingTaskFinishes.enter()
         GetCategories()
+        waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+            self.refresh()
+        }))
     }
-    
+   
     func GetCategories(){
         WBCategory.shared.GetCategories(){
             (result : Data) in
-            self.categoryViewModel.GetCategories(data: result)
+            do{
+                let jsonResult = try JSONSerialization.jsonObject(with: result,  options: .allowFragments) as! NSArray
+                for object in jsonResult{
+                    self.categoriesViewModel.append(CategoryViewModel(category: object as AnyObject))
+                }
+            }catch{
+                print("error parse")
+            }
+            
+            self.waitingTaskFinishes.leave()
         }
     }
+    
+}
+
+
+extension MainViewController : UICollectionViewDataSource,UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // Waiting until the task finishes
+        waitingTaskFinishes.wait()
+        
+        return categoriesViewModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Waiting until the task finishes
+        waitingTaskFinishes.wait()
+        
+        let cell : CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier , for: indexPath) as! CategoryCell
+        
+        cell.categoryViewModel = categoriesViewModel[indexPath.row]
+        
+        return cell
+    }
+    
+    //Refresh collectionView after result webservice
+    func refresh(){
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
     
 }
