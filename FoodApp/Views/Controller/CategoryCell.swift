@@ -17,8 +17,8 @@ class CategoryCell : UICollectionViewCell {
     
     var categoryViewModel : CategoryViewModel!{
         didSet{
-            categoryTitle.text = categoryViewModel.title
-            categoryImage.dowloadFromServer(imageView: categoryImage, link: categoryViewModel.image, contentMode: .scaleAspectFill)
+            categoryTitle.text = categoryViewModel.categoryTitle
+            categoryImage.dowloadFromServer(imageView: categoryImage, link: categoryViewModel.categoryImage, contentMode: .scaleAspectFill)
         }
     }
     

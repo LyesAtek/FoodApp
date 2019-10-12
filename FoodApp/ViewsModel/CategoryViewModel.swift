@@ -10,16 +10,14 @@ import Foundation
 
 
 class CategoryViewModel{
-    var title : String
-    var creation : String
-    var id : String
-    var image : String
+    var categoryTitle : String
+    var categoryId : String
+    var categoryImage : String
     
-    init(category : AnyObject){
-         id = category.object(forKey: "_id") as! String
-         title = category.object(forKey: "title") as! String
-         creation = category.object(forKey: "creation") as! String
-         image = category.object(forKey: "image") as! String
+    init(category : Category){
+        categoryId = category._id
+        categoryTitle = category.title
+        categoryImage = category.image
     }
 
 }

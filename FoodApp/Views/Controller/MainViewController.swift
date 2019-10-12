@@ -37,16 +37,10 @@ class MainViewController : UIViewController{
    
     func GetCategories(){
         WBCategory.shared.GetCategories(){
-            (result : Data) in
-            do{
-                let jsonResult = try JSONSerialization.jsonObject(with: result,  options: .allowFragments) as! NSArray
-                for object in jsonResult{
-                    self.categoriesViewModel.append(CategoryViewModel(category: object as AnyObject))
-                }
-            }catch{
-                print("error parse")
+            (result : [Category]) in
+            for category in result{
+                self.categoriesViewModel.append(CategoryViewModel(category: category))
             }
-            
             self.waitingTaskFinishes.leave()
         }
     }

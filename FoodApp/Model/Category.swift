@@ -11,13 +11,13 @@ import Foundation
 class Category{
     
     var  _id : String
-    var tittle : String
+    var title : String
     var  creation : String
     var image : String
     
-    init(id : String,tittle: String, creation: String, image: String){
+    public init(id : String,tittle: String, creation: String, image: String){
         self._id = id
-        self.tittle = tittle
+        self.title = tittle
         self.creation = creation
         self.image = image
     }
