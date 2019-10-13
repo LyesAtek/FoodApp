@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController : UIViewController{
+class CategoryViewController : UIViewController{
     
     let waitingTaskFinishes = DispatchGroup()
     
@@ -20,7 +20,7 @@ class MainViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         //Initialize CollectionView
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -48,7 +48,7 @@ class MainViewController : UIViewController{
 }
 
 
-extension MainViewController : UICollectionViewDataSource,UICollectionViewDelegate{
+extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Waiting until the task finishes
         waitingTaskFinishes.wait()
@@ -61,10 +61,17 @@ extension MainViewController : UICollectionViewDataSource,UICollectionViewDelega
         waitingTaskFinishes.wait()
         
         let cell : CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier , for: indexPath) as! CategoryCell
-        
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         cell.categoryViewModel = categoriesViewModel[indexPath.row]
         
         return cell
+    }
+    
+    //Select cell action
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+        
+        let productView = ProductViewController()
+        self.navigationController?.pushViewController(productView, animated: true)
     }
     
     //Refresh collectionView after result webservice

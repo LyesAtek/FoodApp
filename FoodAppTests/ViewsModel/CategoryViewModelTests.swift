@@ -9,7 +9,7 @@
 import XCTest
 @testable import FoodApp
 
-class CategoryViewModelTest: XCTestCase {
+class CategoryViewModelTests: XCTestCase {
 
     
     func testInitCategoryViewModel(){
