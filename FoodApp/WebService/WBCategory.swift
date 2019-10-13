@@ -49,7 +49,6 @@ public class WBCategory : NSObject{
             let image = (object as AnyObject).object(forKey: "image") as! String
             let newCategory : Category = Category(id: id, tittle: title, creation: creation, image: image)
             categories.append( newCategory)
-     
         }
         return categories
     }

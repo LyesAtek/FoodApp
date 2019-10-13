@@ -10,12 +10,12 @@ import XCTest
 @testable import FoodApp
 
 class CategoryCellTests: XCTestCase {
-     var controller: MainViewController!
+     var controller: CategoryViewController!
     let cellReuseIdentifier = "CategoryCell"
     override func setUp() {
         super.setUp()
         
-        controller = MainViewController()
+        controller = CategoryViewController()
         _ = controller.view.description
     }
     

@@ -10,7 +10,7 @@ import Foundation
 
 
 class CategoryViewModel{
-    var categoryTitle : String
+    var categoryTitle : String 
     var categoryId : String
     var categoryImage : String
     
@@ -19,5 +19,6 @@ class CategoryViewModel{
         categoryTitle = category.title
         categoryImage = category.image
     }
-
+    
+   
 }

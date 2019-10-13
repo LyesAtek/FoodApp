@@ -14,9 +14,10 @@ class CategoryViewController : UIViewController{
     
     var categoriesViewModel : [CategoryViewModel] = []
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    let cellReuseIdentifier : String = "CategoryCell"
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    let cellReuseIdentifier : String = "categoryReuseIdentifier"
+    let categoryCellView : String = "CategoryCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class CategoryViewController : UIViewController{
         //Initialize CollectionView
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+        collectionView.register(UINib(nibName: categoryCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
     //    collectionView.translatesAutoresizingMaskIntoConstraints = false
         
          //Call Methode services to get Categories
@@ -59,20 +60,18 @@ extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Waiting until the task finishes
         waitingTaskFinishes.wait()
-        
         let cell : CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier , for: indexPath) as! CategoryCell
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         cell.categoryViewModel = categoriesViewModel[indexPath.row]
-        
         return cell
     }
-    
-    //Select cell action
-    @objc func tap(_ sender: UITapGestureRecognizer) {
-        
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath){
+        print("test")
         let productView = ProductViewController()
-        self.navigationController?.pushViewController(productView, animated: true)
+        productView.categoryViewModel = categoriesViewModel[indexPath.row]
+            self.navigationController?.pushViewController(productView, animated: true)
     }
+   
     
     //Refresh collectionView after result webservice
     func refresh(){
