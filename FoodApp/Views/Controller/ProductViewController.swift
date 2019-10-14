@@ -11,6 +11,7 @@ import UIKit
 class ProductViewController : UIViewController{
     
     
+    @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
    
     var categoryViewModel : CategoryViewModel!
@@ -19,28 +20,51 @@ class ProductViewController : UIViewController{
       
     var productsViewModel : [ProductViewModel] = []
     var categoryId : String!
+    var categoryTitle : String!
     let cellReuseIdentifier : String = "productReuseIdentifier"
     let productCellView : String = "ProductCell"
     var hasSaveElements : Bool = false
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
            self.collectionView.dataSource = self
         self.collectionView.delegate = self
          collectionView.register(UINib(nibName: productCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+        let collectionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        collectionViewLayout.itemSize = UICollectionViewFlowLayout.automaticSize
+        collectionViewLayout.estimatedItemSize = CGSize(width: 150, height: 150)
         
+        createProductsViewModel()
         
-        //Test Connection Internet User
+       
+     
+    }
+    
+    
+    
+    func createProductsViewModel() {
+        /*
+         ********If the user does not have access to the internet, I check if he has any data saved for this category
+         */
         if(!ConnectionManager.shared.isConnected){
             if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
                 hasSaveElements = true
-                
+                productTitle.text = categoryTitle
                 self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)
+            }else{
+                productTitle.text = "Aucun accès à Internet"
             }
         }else{
-             if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
+            /*
+             ********If the user has access to the internet, I use the saved data if there is any, or else I make a web service call
+             */
+            
+            productTitle.text = categoryTitle
+            if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
                 hasSaveElements = true
-                 self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)     }else{
+                self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)     }else{
                 hasSaveElements = false
                 self.waitingTaskFinishes.enter()
                 GetProductByCategoryId()
@@ -50,8 +74,10 @@ class ProductViewController : UIViewController{
                 }))
             }
         }
-     
     }
+    
+    
+    
     
     func GetProductByCategoryId(){
         WBProduct.shared.GetProduct(categoryId: categoryViewModel.categoryId){
@@ -83,6 +109,8 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
+    
+   
     
     //Refresh collectionView after result webservice
     func refresh(){

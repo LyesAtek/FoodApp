@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="FoodApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="sBW-uP-tYJ" id="ENf-iA-64I"/>
+                <outlet property="productTitle" destination="yMW-jP-1av" id="rxh-Wa-bFS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yl9-B3-e8M"/>
             </connections>
         </placeholder>
@@ -21,20 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMW-jP-1av">
-                    <rect key="frame" x="31" y="127" width="353" height="76"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="76" id="lPh-pg-WQf"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sBW-uP-tYJ">
                     <rect key="frame" x="31" y="211" width="353" height="651"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="651" id="42d-YQ-nfZ"/>
+                        <constraint firstAttribute="height" constant="651" id="ume-Y8-41e"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cuo-g9-BCl">
                         <size key="itemSize" width="150" height="150"/>
@@ -43,15 +35,24 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMW-jP-1av">
+                    <rect key="frame" x="31" y="82" width="353" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="7I3-q1-f2I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sBW-uP-tYJ" secondAttribute="trailing" constant="30" id="0YV-gr-7uy"/>
-                <constraint firstItem="yMW-jP-1av" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="83" id="AvY-Rf-brH"/>
-                <constraint firstItem="sBW-uP-tYJ" firstAttribute="top" secondItem="yMW-jP-1av" secondAttribute="bottom" constant="8" id="DU1-Ao-lJV"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yMW-jP-1av" secondAttribute="trailing" constant="30" id="DwW-0K-AxF"/>
-                <constraint firstItem="sBW-uP-tYJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="PBk-5D-6hw"/>
-                <constraint firstItem="yMW-jP-1av" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="a03-PE-z1W"/>
+                <constraint firstItem="yMW-jP-1av" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="02Q-Yb-Ar3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yMW-jP-1av" secondAttribute="trailing" constant="30" id="I1K-on-jHe"/>
+                <constraint firstItem="sBW-uP-tYJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="LXc-Qp-AYI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sBW-uP-tYJ" secondAttribute="trailing" constant="30" id="chd-T7-l4q"/>
+                <constraint firstItem="sBW-uP-tYJ" firstAttribute="top" secondItem="yMW-jP-1av" secondAttribute="bottom" constant="53" id="nDM-Ie-wtG"/>
+                <constraint firstItem="yMW-jP-1av" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="38" id="xp4-Le-W1P"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="57.971014492753625" y="35.491071428571423"/>

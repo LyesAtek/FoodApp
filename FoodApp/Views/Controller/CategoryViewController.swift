@@ -27,6 +27,9 @@ class CategoryViewController : UIViewController{
         collectionView.delegate = self
         collectionView.register(UINib(nibName: categoryCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
    
+        let collectionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        collectionViewLayout.itemSize = UICollectionViewFlowLayout.automaticSize
+        collectionViewLayout.estimatedItemSize = CGSize(width: 150, height: 150)
         
          //Call Methode services to get Categories
         //Test Connection Internet User
@@ -82,10 +85,11 @@ extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath){
-        print("test")
+       
         let productView = ProductViewController()
         productView.categoryViewModel = categoriesViewModel[indexPath.row]
         productView.categoryId = self.categoriesViewModel[indexPath.row].categoryId
+        productView.categoryTitle = self.categoriesViewModel[indexPath.row].categoryTitle
             self.navigationController?.pushViewController(productView, animated: true)
     }
    
