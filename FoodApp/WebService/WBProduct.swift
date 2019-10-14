@@ -12,6 +12,8 @@ class WBProduct {
     
     static let shared  = WBProduct()
     
+    
+    
     func GetProduct(categoryId : String,_ completion: @escaping (_ result: [Product]) -> Void){
         
         var products : [Product] = []
@@ -50,9 +52,11 @@ class WBProduct {
             
             let newProduct : Product = Product(id: id, title: title, description: description, image: image, creation: creation, price: price.floatValue, categoryIds: categoryIds)
             products.append(newProduct)
-            ProductManager.sharedInstance.saveProductViewModels.append(ProductViewModel(product: newProduct))
+
         }
         return products
     }
+    
+    
     
 }

@@ -13,7 +13,7 @@ class CategoryViewController : UIViewController{
     let waitingTaskFinishes = DispatchGroup()
     
     var categoriesViewModel : [CategoryViewModel] = []
-    
+    var hasSaveElements : Bool = false
     
     @IBOutlet weak var collectionView: UICollectionView!
     let cellReuseIdentifier : String = "categoryReuseIdentifier"
@@ -26,14 +26,30 @@ class CategoryViewController : UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: categoryCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
-    //    collectionView.translatesAutoresizingMaskIntoConstraints = false
+   
         
          //Call Methode services to get Categories
-        self.waitingTaskFinishes.enter()
-        GetCategories()
-        waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
-            self.refresh()
-        }))
+        //Test Connection Internet User
+        if(!ConnectionManager.shared.isConnected){
+            if(CategoryOffline.categories.count > 0){
+                hasSaveElements = true
+                self.categoriesViewModel = CategoryOffline.transformToCategoriesViewModel(categoriesOffline: CategoryOffline.categories)
+            }
+        }else{
+            if(CategoryOffline.categories.count > 0){
+                hasSaveElements = true
+                self.categoriesViewModel = CategoryOffline.transformToCategoriesViewModel(categoriesOffline: CategoryOffline.categories)
+            }else{
+                hasSaveElements = false
+                self.waitingTaskFinishes.enter()
+                GetCategories()
+                waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+                    self.refresh()
+                    CategoryOffline.saveCategories(categories: self.categoriesViewModel)
+                }))
+            }
+        }
+       
     }
    
     func GetCategories(){
@@ -69,6 +85,7 @@ extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDe
         print("test")
         let productView = ProductViewController()
         productView.categoryViewModel = categoriesViewModel[indexPath.row]
+        productView.categoryId = self.categoriesViewModel[indexPath.row].categoryId
             self.navigationController?.pushViewController(productView, animated: true)
     }
    

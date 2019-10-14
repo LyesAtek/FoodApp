@@ -18,9 +18,10 @@ class ProductViewController : UIViewController{
  
       
     var productsViewModel : [ProductViewModel] = []
+    var categoryId : String!
     let cellReuseIdentifier : String = "productReuseIdentifier"
     let productCellView : String = "ProductCell"
-
+    var hasSaveElements : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,28 @@ class ProductViewController : UIViewController{
         self.collectionView.delegate = self
          collectionView.register(UINib(nibName: productCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
         
-        //Call Methode services to get Categories
-        self.waitingTaskFinishes.enter()
-        GetProductByCategoryId()
-        waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
-            self.refresh()
-        }))
+        
+        //Test Connection Internet User
+        if(!ConnectionManager.shared.isConnected){
+            if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
+                hasSaveElements = true
+                
+                self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)
+            }
+        }else{
+             if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
+                hasSaveElements = true
+                 self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)     }else{
+                hasSaveElements = false
+                self.waitingTaskFinishes.enter()
+                GetProductByCategoryId()
+                waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+                    self.refresh()
+                    ProductOffline.saveProducts(products: self.productsViewModel)
+                }))
+            }
+        }
+     
     }
     
     func GetProductByCategoryId(){
@@ -51,12 +68,16 @@ class ProductViewController : UIViewController{
 // Function CollectionView
 extension ProductViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         waitingTaskFinishes.wait()
+        if(!hasSaveElements){
+            waitingTaskFinishes.wait()
+        }
         return productsViewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         waitingTaskFinishes.wait()
+        if(!hasSaveElements){
+            waitingTaskFinishes.wait()
+        }
         let cell : ProductCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier , for: indexPath) as! ProductCell
         cell.productViewModel = productsViewModel[indexPath.row]
         return cell

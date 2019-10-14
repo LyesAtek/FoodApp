@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        ConnectionManager.shared.testIfIsConnected()
         window = UIWindow(frame: UIScreen.main.bounds)
         let navgiationController = UINavigationController()
         let mainViewController = HomeViewController()
@@ -78,7 +79,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
+    static var persistentContainer: NSPersistentContainer {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    }
+    
+    static var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+  
     // MARK: - Core Data Saving support
 
     func saveContext () {

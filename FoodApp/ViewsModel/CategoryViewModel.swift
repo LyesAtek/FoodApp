@@ -20,5 +20,11 @@ class CategoryViewModel{
         categoryImage = category.image
     }
     
+    init(id: String, title: String, image: String){
+        self.categoryId = id
+        self.categoryImage = image
+        self.categoryTitle = title
+    }
+    
    
 }
