@@ -34,9 +34,9 @@ class ProductViewController : UIViewController{
          collectionView.register(UINib(nibName: productCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
         let collectionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         collectionViewLayout.itemSize = UICollectionViewFlowLayout.automaticSize
-        collectionViewLayout.estimatedItemSize = CGSize(width: 150, height: 150)
+        collectionViewLayout.estimatedItemSize = CGSize(width: 150, height: 200)
         
-        createProductsViewModel()
+        fillProductsViewModel()
         
        
      
@@ -44,7 +44,7 @@ class ProductViewController : UIViewController{
     
     
     
-    func createProductsViewModel() {
+    func fillProductsViewModel() {
         /*
          ********If the user does not have access to the internet, I check if he has any data saved for this category
          */
@@ -109,7 +109,19 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath){
+        
+        let productPopUp = ProductDescriptionViewController()
+        productPopUp.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        productPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.present(productPopUp, animated: false, completion: nil)
+        
+     //   self.
+   //     self.navigationController?.present(productPopUp, animated: false, completion: nil)
+        
+    }
+ 
    
     
     //Refresh collectionView after result webservice

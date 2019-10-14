@@ -10,7 +10,7 @@ import Foundation
 
 public class WBCategory : NSObject{
    static let shared  = WBCategory()
-  
+    let escapeCategory : String = "Menu -"
    func GetCategories(_ completion: @escaping (_ result: [Category]) -> Void){
         
         var categories : [Category] = []
@@ -35,20 +35,19 @@ public class WBCategory : NSObject{
         task.resume()
    
     }
-    
-    
 
-
-   
     func JSONToCategoryArray(_ jsonEvents : NSArray) -> [Category]{
         var categories : [Category] = []
         for object in jsonEvents{
+            
             let id = (object as AnyObject).object(forKey: "_id") as! String
             let title = (object as AnyObject).object(forKey: "title") as! String
             let creation = (object as AnyObject).object(forKey: "creation") as! String
             let image = (object as AnyObject).object(forKey: "image") as! String
             let newCategory : Category = Category(id: id, tittle: title, creation: creation, image: image)
-            categories.append( newCategory)
+            if(!title.contains(escapeCategory)){
+                categories.append( newCategory)
+            }
         }
         return categories
     }

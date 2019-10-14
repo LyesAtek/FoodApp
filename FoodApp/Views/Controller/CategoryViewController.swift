@@ -19,6 +19,8 @@ class CategoryViewController : UIViewController{
     let cellReuseIdentifier : String = "categoryReuseIdentifier"
     let categoryCellView : String = "CategoryCell"
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -31,7 +33,13 @@ class CategoryViewController : UIViewController{
         collectionViewLayout.itemSize = UICollectionViewFlowLayout.automaticSize
         collectionViewLayout.estimatedItemSize = CGSize(width: 150, height: 150)
         
-         //Call Methode services to get Categories
+        fillCategoriesViewModel()
+       
+    }
+   
+    
+    func fillCategoriesViewModel() {
+        //Call Methode services to get Categories
         //Test Connection Internet User
         if(!ConnectionManager.shared.isConnected){
             if(CategoryOffline.categories.count > 0){
@@ -39,10 +47,10 @@ class CategoryViewController : UIViewController{
                 self.categoriesViewModel = CategoryOffline.transformToCategoriesViewModel(categoriesOffline: CategoryOffline.categories)
             }
         }else{
-            if(CategoryOffline.categories.count > 0){
+           /* if(CategoryOffline.categories.count > 0){
                 hasSaveElements = true
                 self.categoriesViewModel = CategoryOffline.transformToCategoriesViewModel(categoriesOffline: CategoryOffline.categories)
-            }else{
+          //  }else{*/
                 hasSaveElements = false
                 self.waitingTaskFinishes.enter()
                 GetCategories()
@@ -50,11 +58,10 @@ class CategoryViewController : UIViewController{
                     self.refresh()
                     CategoryOffline.saveCategories(categories: self.categoriesViewModel)
                 }))
-            }
+          //  }
         }
-       
     }
-   
+    
     func GetCategories(){
         WBCategory.shared.GetCategories(){
             (result : [Category]) in
@@ -90,7 +97,7 @@ extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDe
         productView.categoryViewModel = categoriesViewModel[indexPath.row]
         productView.categoryId = self.categoriesViewModel[indexPath.row].categoryId
         productView.categoryTitle = self.categoriesViewModel[indexPath.row].categoryTitle
-            self.navigationController?.pushViewController(productView, animated: true)
+        self.navigationController?.pushViewController(productView, animated: true)
     }
    
     
