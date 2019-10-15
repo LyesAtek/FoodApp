@@ -13,11 +13,13 @@ class CategoryCell : UICollectionViewCell {
     
     @IBOutlet weak var categoryImage: UIImageView!
     
-    @IBOutlet weak var categoryTitle: UILabel!
+    @IBOutlet weak var categoryButton: UIButton!
+    
+    weak var delegate : CategoryCell?
     
     var categoryViewModel : CategoryViewModel!{
         didSet{
-            categoryTitle.text = categoryViewModel.categoryTitle
+            categoryButton.setTitle( categoryViewModel.categoryTitle, for: .normal)
             categoryImage.dowloadFromServer(imageView: categoryImage, link: categoryViewModel.categoryImage, contentMode: .scaleAspectFill)
         }
     }
@@ -27,7 +29,7 @@ class CategoryCell : UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes{
         
         setNeedsLayout()

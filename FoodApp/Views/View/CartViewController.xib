@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="FoodApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="DV3-81-wfY" id="WUN-Jo-7nj"/>
+                <outlet property="totalPrice" destination="VaT-If-dy0" id="9Vc-3h-L3j"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Yll-RD-uyd"/>
             </connections>
         </placeholder>
@@ -20,15 +22,51 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CartView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU6-g5-oXU">
-                    <rect key="frame" x="20" y="165" width="374" height="496"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre Panier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU6-g5-oXU">
+                    <rect key="frame" x="20" y="65" width="374" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="BqB-nQ-U7r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.045024134219999998" green="0.30898725989999998" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DV3-81-wfY">
+                    <rect key="frame" x="20" y="186" width="374" height="527"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="527" id="GOE-jx-msk"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-sL-JCW">
+                    <rect key="frame" x="20" y="713" width="374" height="47"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-If-dy0">
+                            <rect key="frame" x="8" y="13" width="358" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.045024134219999998" green="0.30898725989999998" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="ZPV-jt-OIZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NU6-g5-oXU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="21" id="4rN-Wb-NaU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uH7-sL-JCW" secondAttribute="trailing" constant="20" id="5zH-op-CUw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DV3-81-wfY" secondAttribute="trailing" constant="20" id="9mS-vE-bNS"/>
+                <constraint firstItem="DV3-81-wfY" firstAttribute="top" secondItem="NU6-g5-oXU" secondAttribute="bottom" constant="31" id="B1s-le-iD8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NU6-g5-oXU" secondAttribute="trailing" constant="20" id="VCi-9j-MIs"/>
+                <constraint firstItem="uH7-sL-JCW" firstAttribute="top" secondItem="DV3-81-wfY" secondAttribute="bottom" id="Yh7-xT-YUx"/>
+                <constraint firstItem="uH7-sL-JCW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cAm-lt-QxW"/>
+                <constraint firstItem="NU6-g5-oXU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sVN-Lz-RZ3"/>
+                <constraint firstItem="DV3-81-wfY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="wAH-HS-G92"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </view>

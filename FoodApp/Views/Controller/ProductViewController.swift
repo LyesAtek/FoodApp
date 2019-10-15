@@ -11,9 +11,12 @@ import UIKit
 class ProductViewController : UIViewController{
     
     
+
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
    
+  
+    
     var categoryViewModel : CategoryViewModel!
     let waitingTaskFinishes = DispatchGroup()
  
@@ -25,11 +28,13 @@ class ProductViewController : UIViewController{
     let productCellView : String = "ProductCell"
     var hasSaveElements : Bool = false
     
+   
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           self.collectionView.dataSource = self
+        self.collectionView.dataSource = self
         self.collectionView.delegate = self
          collectionView.register(UINib(nibName: productCellView, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
         let collectionViewLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -92,7 +97,19 @@ class ProductViewController : UIViewController{
 }
 
 // Function CollectionView
-extension ProductViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+extension ProductViewController : UICollectionViewDelegate, UICollectionViewDataSource,ProductCellDelegate{
+    
+    //TODO Comment
+    
+    func didPressButton(_ tag: Int,productViewModel : ProductViewModel) {
+        let productPopUp = ProductMessageViewController()
+        productPopUp.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        productPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        productPopUp.productViewModel = productViewModel
+        CartManager.shared.productsViewModel.append(productViewModel)
+        self.present(productPopUp, animated: false, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(!hasSaveElements){
             waitingTaskFinishes.wait()
@@ -105,6 +122,8 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
             waitingTaskFinishes.wait()
         }
         let cell : ProductCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier , for: indexPath) as! ProductCell
+       cell.cellDelegate = self
+        cell.tag = indexPath.row
         cell.productViewModel = productsViewModel[indexPath.row]
         return cell
     }
@@ -115,11 +134,8 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         let productPopUp = ProductDescriptionViewController()
         productPopUp.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         productPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        productPopUp.productViewModel = self.productsViewModel[indexPath.row]
         self.present(productPopUp, animated: false, completion: nil)
-        
-     //   self.
-   //     self.navigationController?.present(productPopUp, animated: false, completion: nil)
-        
     }
  
    

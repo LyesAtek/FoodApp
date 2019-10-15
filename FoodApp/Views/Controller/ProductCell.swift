@@ -12,10 +12,10 @@ class ProductCell : UICollectionViewCell{
     
     @IBOutlet weak var productImage: UIImageView!
     
-    weak var delegate:ProductCell?
+    
     
     public var indexPath:IndexPath!
-
+    var cellDelegate: ProductCellDelegate?
    
     @IBOutlet weak var productTitle: UILabel!
     
@@ -40,8 +40,15 @@ class ProductCell : UICollectionViewCell{
     
     
     @IBAction func commandButtonPressed(_ sender: Any) {
-         self.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+         self.backgroundColor = UIColor(red: 11/255, green: 66/255, blue: 15/255, alpha: 1)
+        
     }
+    
+    @IBAction func commandButtonTouchUpInside(_ sender: UIButton) {
+        self.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        cellDelegate?.didPressButton(sender.tag,productViewModel: productViewModel)
+    }
+    
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes{
         
@@ -55,4 +62,7 @@ class ProductCell : UICollectionViewCell{
         
     }
     
+}
+protocol ProductCellDelegate : class {
+    func didPressButton(_ tag: Int,productViewModel : ProductViewModel)
 }

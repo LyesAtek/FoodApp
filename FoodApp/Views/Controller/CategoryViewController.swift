@@ -62,6 +62,7 @@ class CategoryViewController : UIViewController{
         }
     }
     
+    
     func GetCategories(){
         WBCategory.shared.GetCategories(){
             (result : [Category]) in
@@ -92,14 +93,13 @@ extension CategoryViewController : UICollectionViewDataSource,UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath){
-       
         let productView = ProductViewController()
         productView.categoryViewModel = categoriesViewModel[indexPath.row]
         productView.categoryId = self.categoriesViewModel[indexPath.row].categoryId
         productView.categoryTitle = self.categoriesViewModel[indexPath.row].categoryTitle
         self.navigationController?.pushViewController(productView, animated: true)
     }
-   
+ 
     
     //Refresh collectionView after result webservice
     func refresh(){

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : UITabBarController, UITabBarControllerDelegate{
+class HomeViewController : UITabBarController,UITabBarControllerDelegate{
     
     var categoryTabNavigationController : UINavigationController!
     var cartTabNavigationControoller : UINavigationController!
@@ -16,6 +16,7 @@ class HomeViewController : UITabBarController, UITabBarControllerDelegate{
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         // Initialize Views
         categoryTabNavigationController = UINavigationController.init(rootViewController: CategoryViewController())
         cartTabNavigationControoller = UINavigationController.init(rootViewController: CartViewController())
@@ -31,5 +32,5 @@ class HomeViewController : UITabBarController, UITabBarControllerDelegate{
         cartTabNavigationControoller.tabBarItem = cartItem
     }
     
-    
+   
 }
