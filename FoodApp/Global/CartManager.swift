@@ -13,5 +13,8 @@ class CartManager{
     static var shared = CartManager()
     
     var productsViewModel : [ProductViewModel] = []
+    var numberOfUser : String = ""
+    var paid : Bool = false
+    
     
 }

@@ -16,7 +16,8 @@ class HomeViewController : UITabBarController,UITabBarControllerDelegate{
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        print(CartManager.shared.numberOfUser)
+         print(CartManager.shared.paid)
         // Initialize Views
         categoryTabNavigationController = UINavigationController.init(rootViewController: CategoryViewController())
         cartTabNavigationControoller = UINavigationController.init(rootViewController: CartViewController())

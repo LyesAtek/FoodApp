@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class Order{
+    
+    var user : String
+    var products : [OrderProduct]
+    var paid : Bool
+    
+    init(user : String, products : [OrderProduct], paid : Bool){
+        
+        self.user = user
+        self.products = products
+        self.paid = paid
+    }
+    
+    
+}

@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ConnectionManager.shared.testIfIsConnected()
         window = UIWindow(frame: UIScreen.main.bounds)
         let navgiationController = UINavigationController()
-        let mainViewController = HomeViewController()
+        let firstViewController = FirstViewController()
         navgiationController.isNavigationBarHidden = true
-        navgiationController.pushViewController(mainViewController, animated: false)
+        navgiationController.pushViewController(firstViewController, animated: false)
         window!.rootViewController = navgiationController
         window!.makeKeyAndVisible()
         return true

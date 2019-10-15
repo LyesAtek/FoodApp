@@ -60,6 +60,17 @@
 		668BA8A023527A8000BEA939 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668BA89F23527A8000BEA939 /* ProductViewController.xib */; };
 		668BA8A223527B3800BEA939 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8A123527B3800BEA939 /* ProductViewController.swift */; };
 		66D5DBBC23563CDB00627641 /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBBB23563CDB00627641 /* ExpandableSection.swift */; };
+		66D5DBBE2356536800627641 /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBBD2356536800627641 /* OrderProduct.swift */; };
+		66D5DBC02356540800627641 /* WBOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBBF2356540800627641 /* WBOrder.swift */; };
+		66D5DBC22356549600627641 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBC12356549600627641 /* OrderViewModel.swift */; };
+		66D5DBC423565E5100627641 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC323565E5100627641 /* FirstViewController.xib */; };
+		66D5DBC623565EE800627641 /* iconMcDonald's.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC523565EE700627641 /* iconMcDonald's.png */; };
+		66D5DBC8235660E400627641 /* mcdonald'sImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */; };
+		66D5DBCA2356652500627641 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBC92356652500627641 /* FirstViewController.swift */; };
+		66D5DBCE2356751700627641 /* PaiementChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */; };
+		66D5DBD02356752B00627641 /* PaiementChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */; };
+		66D5DBD2235676B600627641 /* carteBancaire.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBD1235676B600627641 /* carteBancaire.png */; };
+		66D5DBD42356776700627641 /* credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBD32356776700627641 /* credit-card.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +141,17 @@
 		668BA89F23527A8000BEA939 /* ProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		668BA8A123527B3800BEA939 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		66D5DBBB23563CDB00627641 /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
+		66D5DBBD2356536800627641 /* OrderProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProduct.swift; sourceTree = "<group>"; };
+		66D5DBBF2356540800627641 /* WBOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOrder.swift; sourceTree = "<group>"; };
+		66D5DBC12356549600627641 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		66D5DBC323565E5100627641 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		66D5DBC523565EE700627641 /* iconMcDonald's.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconMcDonald's.png"; sourceTree = "<group>"; };
+		66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mcdonald'sImage.jpg"; sourceTree = "<group>"; };
+		66D5DBC92356652500627641 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaiementChoiceViewController.xib; sourceTree = "<group>"; };
+		66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaiementChoiceViewController.swift; sourceTree = "<group>"; };
+		66D5DBD1235676B600627641 /* carteBancaire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carteBancaire.png; sourceTree = "<group>"; };
+		66D5DBD32356776700627641 /* credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit-card.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +175,14 @@
 		661F4724235484F8000F91F8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				66D5DBD32356776700627641 /* credit-card.png */,
+				66D5DBD1235676B600627641 /* carteBancaire.png */,
 				661F474323550994000F91F8 /* backgroundProductTitleView.png */,
 				661F472F23548F10000F91F8 /* backroungCell.png */,
 				661F472923548916000F91F8 /* backgroundSelectedCommandButton.png */,
 				661F472723548619000F91F8 /* backgroundCommandButton.png */,
+				66D5DBC523565EE700627641 /* iconMcDonald's.png */,
+				66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -251,6 +277,7 @@
 			children = (
 				668BA8852350CF5D00BEA939 /* CategoryViewModel.swift */,
 				667C2A24235373AA0027264C /* ProductViewModel.swift */,
+				66D5DBC12356549600627641 /* OrderViewModel.swift */,
 			);
 			path = ViewsModel;
 			sourceTree = "<group>";
@@ -262,6 +289,7 @@
 				668BA8762350C42700BEA939 /* Product.swift */,
 				668BA8782350C43100BEA939 /* Order.swift */,
 				668BA87A2350C45500BEA939 /* Category.swift */,
+				66D5DBBD2356536800627641 /* OrderProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +299,7 @@
 			children = (
 				668BA8812350C8B400BEA939 /* WBCategory.swift */,
 				667C2A22235372230027264C /* WBProduct.swift */,
+				66D5DBBF2356540800627641 /* WBOrder.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -289,6 +318,8 @@
 				66017EE62355BACA00CA0D23 /* CartCell.xib */,
 				66017EEE2355D75200CA0D23 /* CartFooterTableView.xib */,
 				66017EF02355E00C00CA0D23 /* CartHeaderSectionTableView.xib */,
+				66D5DBC323565E5100627641 /* FirstViewController.xib */,
+				66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +338,8 @@
 				66017EE82355BBAB00CA0D23 /* CartCell.swift */,
 				66017EEC2355D71800CA0D23 /* CartFooterTableView.swift */,
 				66017EF22355E02300CA0D23 /* CartHeaderSectionTableView.swift */,
+				66D5DBC92356652500627641 /* FirstViewController.swift */,
+				66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -440,11 +473,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				661F474423550994000F91F8 /* backgroundProductTitleView.png in Resources */,
+				66D5DBC8235660E400627641 /* mcdonald'sImage.jpg in Resources */,
+				66D5DBCE2356751700627641 /* PaiementChoiceViewController.xib in Resources */,
+				66D5DBC423565E5100627641 /* FirstViewController.xib in Resources */,
 				668BA8572350B8BB00BEA939 /* LaunchScreen.storyboard in Resources */,
 				66017EF12355E00C00CA0D23 /* CartHeaderSectionTableView.xib in Resources */,
 				661F472823548619000F91F8 /* backgroundCommandButton.png in Resources */,
+				66D5DBC623565EE800627641 /* iconMcDonald's.png in Resources */,
 				667C2A2E235380740027264C /* ProductCell.xib in Resources */,
 				66017EEF2355D75200CA0D23 /* CartFooterTableView.xib in Resources */,
+				66D5DBD2235676B600627641 /* carteBancaire.png in Resources */,
 				668BA8732350BA3E00BEA939 /* CategoryViewController.xib in Resources */,
 				661F472A23548916000F91F8 /* backgroundSelectedCommandButton.png in Resources */,
 				66017EE72355BACA00CA0D23 /* CartCell.xib in Resources */,
@@ -453,6 +491,7 @@
 				668BA8542350B8BB00BEA939 /* Assets.xcassets in Resources */,
 				668BA8A023527A8000BEA939 /* ProductViewController.xib in Resources */,
 				661F473023548F10000F91F8 /* backroungCell.png in Resources */,
+				66D5DBD42356776700627641 /* credit-card.png in Resources */,
 				667C2A1E235326110027264C /* CartViewController.xib in Resources */,
 				66017EE32355B47C00CA0D23 /* ProductMessageViewController.xib in Resources */,
 				668BA88C2352164500BEA939 /* CategoryCell.xib in Resources */,
@@ -477,18 +516,22 @@
 				668BA8792350C43100BEA939 /* Order.swift in Sources */,
 				668BA88E235236A800BEA939 /* UIImageView.swift in Sources */,
 				66017EE52355B4A100CA0D23 /* ProductMessageViewController.swift in Sources */,
+				66D5DBD02356752B00627641 /* PaiementChoiceViewController.swift in Sources */,
 				668BA84C2350B8B900BEA939 /* ViewController.swift in Sources */,
 				668BA8822350C8B400BEA939 /* WBCategory.swift in Sources */,
 				667C2A23235372230027264C /* WBProduct.swift in Sources */,
 				667C2A3F2353E8910027264C /* CategoryOffline.swift in Sources */,
 				661F4742235502E1000F91F8 /* UIView.swift in Sources */,
+				66D5DBCA2356652500627641 /* FirstViewController.swift in Sources */,
 				661F474623550BF6000F91F8 /* SelfSizedCollectionView.swift in Sources */,
 				668BA89E235279C700BEA939 /* HomeViewController.swift in Sources */,
 				66017EED2355D71800CA0D23 /* CartFooterTableView.swift in Sources */,
+				66D5DBC22356549600627641 /* OrderViewModel.swift in Sources */,
 				668BA8A223527B3800BEA939 /* ProductViewController.swift in Sources */,
 				668BA8862350CF5D00BEA939 /* CategoryViewModel.swift in Sources */,
 				667C2A3D2353E5170027264C /* ConnectionManager.swift in Sources */,
 				668BA84A2350B8B900BEA939 /* AppDelegate.swift in Sources */,
+				66D5DBBE2356536800627641 /* OrderProduct.swift in Sources */,
 				668BA8772350C42700BEA939 /* Product.swift in Sources */,
 				667C2A25235373AA0027264C /* ProductViewModel.swift in Sources */,
 				668BA8522350B8B900BEA939 /* FoodApp.xcdatamodeld in Sources */,
@@ -501,6 +544,7 @@
 				667C2A302353938B0027264C /* ProductCell.swift in Sources */,
 				668BA8752350BA6200BEA939 /* CategoryViewController.swift in Sources */,
 				668BA8842350C8D500BEA939 /* FoodServer.swift in Sources */,
+				66D5DBC02356540800627641 /* WBOrder.swift in Sources */,
 				668BA87B2350C45500BEA939 /* Category.swift in Sources */,
 				661F473A2354C8B8000F91F8 /* ProductDescriptionViewController.swift in Sources */,
 			);
