@@ -30,7 +30,6 @@
 		667C2A25235373AA0027264C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A24235373AA0027264C /* ProductViewModel.swift */; };
 		667C2A27235373BD0027264C /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A26235373BD0027264C /* ProductTests.swift */; };
 		667C2A29235373CD0027264C /* ProductViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A28235373CD0027264C /* ProductViewModelTests.swift */; };
-		667C2A2C235373E00027264C /* ProductManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A2B235373E00027264C /* ProductManagerTests.swift */; };
 		667C2A2E235380740027264C /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667C2A2D235380740027264C /* ProductCell.xib */; };
 		667C2A302353938B0027264C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A2F2353938B0027264C /* ProductCell.swift */; };
 		667C2A3B2353C0DE0027264C /* ProductOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C2A3A2353C0DE0027264C /* ProductOffline.swift */; };
@@ -54,7 +53,6 @@
 		668BA88E235236A800BEA939 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA88D235236A800BEA939 /* UIImageView.swift */; };
 		668BA8932352597C00BEA939 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA8922352597C00BEA939 /* CategoryTests.swift */; };
 		668BA89623525D5100BEA939 /* CategoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA89523525D5100BEA939 /* CategoryViewModelTests.swift */; };
-		668BA89A23525F4000BEA939 /* CategoryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA89923525F4000BEA939 /* CategoryCellTests.swift */; };
 		668BA89C235278F700BEA939 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668BA89B235278F700BEA939 /* HomeViewController.xib */; };
 		668BA89E235279C700BEA939 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BA89D235279C700BEA939 /* HomeViewController.swift */; };
 		668BA8A023527A8000BEA939 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668BA89F23527A8000BEA939 /* ProductViewController.xib */; };
@@ -65,12 +63,11 @@
 		66D5DBC22356549600627641 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBC12356549600627641 /* OrderViewModel.swift */; };
 		66D5DBC423565E5100627641 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC323565E5100627641 /* FirstViewController.xib */; };
 		66D5DBC623565EE800627641 /* iconMcDonald's.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC523565EE700627641 /* iconMcDonald's.png */; };
-		66D5DBC8235660E400627641 /* mcdonald'sImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */; };
 		66D5DBCA2356652500627641 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBC92356652500627641 /* FirstViewController.swift */; };
 		66D5DBCE2356751700627641 /* PaiementChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */; };
 		66D5DBD02356752B00627641 /* PaiementChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */; };
-		66D5DBD2235676B600627641 /* carteBancaire.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBD1235676B600627641 /* carteBancaire.png */; };
-		66D5DBD42356776700627641 /* credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBD32356776700627641 /* credit-card.png */; };
+		66D5DBD92356929700627641 /* PopUpCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66D5DBD82356929700627641 /* PopUpCartViewController.xib */; };
+		66D5DBDB235693C000627641 /* PopUpCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DBDA235693C000627641 /* PopUpCartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +104,6 @@
 		667C2A24235373AA0027264C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		667C2A26235373BD0027264C /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 		667C2A28235373CD0027264C /* ProductViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelTests.swift; sourceTree = "<group>"; };
-		667C2A2B235373E00027264C /* ProductManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManagerTests.swift; sourceTree = "<group>"; };
 		667C2A2D235380740027264C /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		667C2A2F2353938B0027264C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		667C2A3A2353C0DE0027264C /* ProductOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOffline.swift; sourceTree = "<group>"; };
@@ -135,7 +131,6 @@
 		668BA88D235236A800BEA939 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		668BA8922352597C00BEA939 /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		668BA89523525D5100BEA939 /* CategoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelTests.swift; sourceTree = "<group>"; };
-		668BA89923525F4000BEA939 /* CategoryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellTests.swift; sourceTree = "<group>"; };
 		668BA89B235278F700BEA939 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		668BA89D235279C700BEA939 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		668BA89F23527A8000BEA939 /* ProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
@@ -146,12 +141,11 @@
 		66D5DBC12356549600627641 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		66D5DBC323565E5100627641 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 		66D5DBC523565EE700627641 /* iconMcDonald's.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconMcDonald's.png"; sourceTree = "<group>"; };
-		66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mcdonald'sImage.jpg"; sourceTree = "<group>"; };
 		66D5DBC92356652500627641 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaiementChoiceViewController.xib; sourceTree = "<group>"; };
 		66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaiementChoiceViewController.swift; sourceTree = "<group>"; };
-		66D5DBD1235676B600627641 /* carteBancaire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carteBancaire.png; sourceTree = "<group>"; };
-		66D5DBD32356776700627641 /* credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit-card.png"; sourceTree = "<group>"; };
+		66D5DBD82356929700627641 /* PopUpCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCartViewController.xib; sourceTree = "<group>"; };
+		66D5DBDA235693C000627641 /* PopUpCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,14 +169,11 @@
 		661F4724235484F8000F91F8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				66D5DBD32356776700627641 /* credit-card.png */,
-				66D5DBD1235676B600627641 /* carteBancaire.png */,
 				661F474323550994000F91F8 /* backgroundProductTitleView.png */,
 				661F472F23548F10000F91F8 /* backroungCell.png */,
 				661F472923548916000F91F8 /* backgroundSelectedCommandButton.png */,
 				661F472723548619000F91F8 /* backgroundCommandButton.png */,
 				66D5DBC523565EE700627641 /* iconMcDonald's.png */,
-				66D5DBC7235660E300627641 /* mcdonald'sImage.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -199,7 +190,6 @@
 		667C2A2A235373D00027264C /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				667C2A2B235373E00027264C /* ProductManagerTests.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -320,6 +310,7 @@
 				66017EF02355E00C00CA0D23 /* CartHeaderSectionTableView.xib */,
 				66D5DBC323565E5100627641 /* FirstViewController.xib */,
 				66D5DBCD2356751700627641 /* PaiementChoiceViewController.xib */,
+				66D5DBD82356929700627641 /* PopUpCartViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +331,7 @@
 				66017EF22355E02300CA0D23 /* CartHeaderSectionTableView.swift */,
 				66D5DBC92356652500627641 /* FirstViewController.swift */,
 				66D5DBCF2356752B00627641 /* PaiementChoiceViewController.swift */,
+				66D5DBDA235693C000627641 /* PopUpCartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,7 +377,6 @@
 		668BA89823525F2200BEA939 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				668BA89923525F4000BEA939 /* CategoryCellTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,7 +464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				661F474423550994000F91F8 /* backgroundProductTitleView.png in Resources */,
-				66D5DBC8235660E400627641 /* mcdonald'sImage.jpg in Resources */,
 				66D5DBCE2356751700627641 /* PaiementChoiceViewController.xib in Resources */,
 				66D5DBC423565E5100627641 /* FirstViewController.xib in Resources */,
 				668BA8572350B8BB00BEA939 /* LaunchScreen.storyboard in Resources */,
@@ -482,16 +472,15 @@
 				66D5DBC623565EE800627641 /* iconMcDonald's.png in Resources */,
 				667C2A2E235380740027264C /* ProductCell.xib in Resources */,
 				66017EEF2355D75200CA0D23 /* CartFooterTableView.xib in Resources */,
-				66D5DBD2235676B600627641 /* carteBancaire.png in Resources */,
 				668BA8732350BA3E00BEA939 /* CategoryViewController.xib in Resources */,
 				661F472A23548916000F91F8 /* backgroundSelectedCommandButton.png in Resources */,
 				66017EE72355BACA00CA0D23 /* CartCell.xib in Resources */,
 				661F47402354F89C000F91F8 /* ProductDescriptionViewController.xib in Resources */,
 				668BA89C235278F700BEA939 /* HomeViewController.xib in Resources */,
 				668BA8542350B8BB00BEA939 /* Assets.xcassets in Resources */,
+				66D5DBD92356929700627641 /* PopUpCartViewController.xib in Resources */,
 				668BA8A023527A8000BEA939 /* ProductViewController.xib in Resources */,
 				661F473023548F10000F91F8 /* backroungCell.png in Resources */,
-				66D5DBD42356776700627641 /* credit-card.png in Resources */,
 				667C2A1E235326110027264C /* CartViewController.xib in Resources */,
 				66017EE32355B47C00CA0D23 /* ProductMessageViewController.xib in Resources */,
 				668BA88C2352164500BEA939 /* CategoryCell.xib in Resources */,
@@ -517,6 +506,7 @@
 				668BA88E235236A800BEA939 /* UIImageView.swift in Sources */,
 				66017EE52355B4A100CA0D23 /* ProductMessageViewController.swift in Sources */,
 				66D5DBD02356752B00627641 /* PaiementChoiceViewController.swift in Sources */,
+				66D5DBDB235693C000627641 /* PopUpCartViewController.swift in Sources */,
 				668BA84C2350B8B900BEA939 /* ViewController.swift in Sources */,
 				668BA8822350C8B400BEA939 /* WBCategory.swift in Sources */,
 				667C2A23235372230027264C /* WBProduct.swift in Sources */,
@@ -558,8 +548,6 @@
 				667C2A29235373CD0027264C /* ProductViewModelTests.swift in Sources */,
 				667C2A27235373BD0027264C /* ProductTests.swift in Sources */,
 				668BA8932352597C00BEA939 /* CategoryTests.swift in Sources */,
-				668BA89A23525F4000BEA939 /* CategoryCellTests.swift in Sources */,
-				667C2A2C235373E00027264C /* ProductManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

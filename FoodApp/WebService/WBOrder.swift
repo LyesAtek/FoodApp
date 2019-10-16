@@ -12,14 +12,23 @@ class WBOrder{
     
     static let shared : WBOrder = WBOrder()
     
-    func CreateOrder(paid : Bool,orderViewModel : OrderViewModel,_ completion: @escaping () -> Void){
+    //TODO Encodable JSON
+  /*  func CreateOrder(orderViewModel : OrderViewModel,_ completion: @escaping () -> Void){
        // var order : Order
-        let json: [String: Any] = ["user": orderViewModel.userPhone,
-                                   "products":  orderViewModel.orderProducts,"paid": paid]
+        var jsonTab : [[String: Any]] = []
         
+      //  jsonTest[jsonTest.length]
+        for product in orderViewModel.orderProducts{
+            jsonTab.append(["productId":product.productId,"quantity":product.quantity])
+        }
+      
+        let json: [String: Any] = ["user": CartManager.shared.numberOfUser,
+                                   "products": [jsonTab],"paid" : CartManager.shared.paid]
+        
+     
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
-
-        let urlPath :String = FoodServer.GetBaseURL() + "categories"
+        print(jsonData)
+        let urlPath :String = FoodServer.GetBaseURL() + "orders"
         let url: URL = URL(string: urlPath)!
         var request = URLRequest(url: url)
         
@@ -40,7 +49,7 @@ class WBOrder{
         }
         
         task.resume()
-    }
+    }*/
     
    /* func JSONToOrder(_ jsonObject : Any) -> Order{
         var order : Order

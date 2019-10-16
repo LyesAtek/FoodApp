@@ -62,22 +62,15 @@ class ProductViewController : UIViewController{
                 productTitle.text = "Aucun accès à Internet"
             }
         }else{
-            /*
-             ********If the user has access to the internet, I use the saved data if there is any, or else I make a web service call
-             */
-            
             productTitle.text = categoryTitle
-            if(ProductOffline.getProductsByCategoryId(categoryId: self.categoryId).count > 0){
-                hasSaveElements = true
-                self.productsViewModel = ProductOffline.getProductsByCategoryId(categoryId: categoryId)     }else{
-                hasSaveElements = false
-                self.waitingTaskFinishes.enter()
-                GetProductByCategoryId()
-                waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
-                    self.refresh()
-                    ProductOffline.saveProducts(products: self.productsViewModel)
+            hasSaveElements = false
+            self.waitingTaskFinishes.enter()
+            GetProductByCategoryId()
+            waitingTaskFinishes.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+            self.refresh()
+            ProductOffline.saveProducts(products: self.productsViewModel)
                 }))
-            }
+            
         }
     }
     

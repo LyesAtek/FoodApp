@@ -13,12 +13,15 @@ class OrderViewModel{
     var userPhone : String
     
     var products : [[ProductViewModel]]
+    var paid : Bool
     
     var orderProducts : [OrderProduct] = []
     
-    init(userPhone : String, products : [[ProductViewModel]]){
+    
+    init(userPhone : String, products : [[ProductViewModel]], paid: Bool){
         self.userPhone = userPhone
         self.products = products
+        self.paid = paid
         self.buildOrderProducts()
     }
     

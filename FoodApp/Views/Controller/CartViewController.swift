@@ -82,6 +82,36 @@ class CartViewController : UIViewController{
         }
         return false
     }
+    
+    @IBAction func commandButtonPressed(_ sender: Any) {
+        var products : [[ProductViewModel]] = []
+        for section in sections{
+           products.append(section.products)
+        }
+        let orderViewModel = OrderViewModel(userPhone: CartManager.shared.numberOfUser, products: products, paid: CartManager.shared.paid)
+        createOrder(orderViewModel: orderViewModel)
+        
+    }
+    
+    func createOrder(orderViewModel : OrderViewModel){
+        //TODO Call WBCreateOrder
+        
+        if(CartManager.shared.paid){
+            //TODO Paiement Bank Card
+            let cartPopUp = PopUpCartViewController()
+            cartPopUp.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            cartPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            self.present(cartPopUp, animated: false, completion: nil)
+        }else{
+            let cartPopUp = PopUpCartViewController()
+            cartPopUp.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            cartPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            self.present(cartPopUp, animated: false, completion: nil)
+        }
+        
+       
+    }
+    
 }
 
 
@@ -105,6 +135,9 @@ extension CartViewController : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
    
+    //TODO Delete Product
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }

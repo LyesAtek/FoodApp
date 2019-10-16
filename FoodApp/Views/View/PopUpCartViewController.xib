@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpCartViewController" customModule="FoodApp" customModuleProvider="target">
+            <connections>
+                <outlet property="popUpView" destination="ktX-dA-vNc" id="GmE-ef-D5Y"/>
+                <outlet property="view" destination="iN0-l3-epB" id="BXA-st-wEM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktX-dA-vNc">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre commande à est en cours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBa-K2-IQ6">
+                            <rect key="frame" x="8" y="139" width="284" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Wb3-h5-B33"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJt-Yx-wZJ">
+                            <rect key="frame" x="0.0" y="245" width="300" height="55"/>
+                            <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.031372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="Buw-1l-4Am"/>
+                            </constraints>
+                            <state key="normal" title="Fermer">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closePopUp:" destination="-1" eventType="touchUpInside" id="61U-iV-pEf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.045024134219999998" green="0.30898725989999998" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="1dd-2x-3lq"/>
+                        <constraint firstItem="IBa-K2-IQ6" firstAttribute="leading" secondItem="apO-32-jlg" secondAttribute="leading" constant="8" id="3tP-5h-5Xw"/>
+                        <constraint firstItem="vJt-Yx-wZJ" firstAttribute="trailing" secondItem="apO-32-jlg" secondAttribute="trailing" id="YNG-PT-c1U"/>
+                        <constraint firstItem="vJt-Yx-wZJ" firstAttribute="leading" secondItem="apO-32-jlg" secondAttribute="leading" id="dCS-aD-Jse"/>
+                        <constraint firstItem="apO-32-jlg" firstAttribute="trailing" secondItem="IBa-K2-IQ6" secondAttribute="trailing" constant="8" id="g4J-2q-mEU"/>
+                        <constraint firstAttribute="height" constant="300" id="nce-Hl-rQo"/>
+                        <constraint firstItem="IBa-K2-IQ6" firstAttribute="top" secondItem="apO-32-jlg" secondAttribute="top" constant="139" id="rBN-27-8K4"/>
+                        <constraint firstItem="vJt-Yx-wZJ" firstAttribute="bottom" secondItem="apO-32-jlg" secondAttribute="bottom" id="ue7-8J-Kxf"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="apO-32-jlg"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ktX-dA-vNc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cYx-Iu-8Vy"/>
+                <constraint firstItem="ktX-dA-vNc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pei-qG-a92"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+        </view>
+    </objects>
+</document>
